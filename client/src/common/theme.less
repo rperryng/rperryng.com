@@ -1,0 +1,97 @@
+@navbarHeight: 55px;
+@heroHeight: 600px;
+
+@fontFamily-slab: 'Roboto Slab';
+
+@zIndex-behind: -1;
+@zIndex-default: 0;
+@zIndex-overlay: 1;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html body {
+  * {
+    font-family: 'Roboto Slab', sans-serif;
+  }
+  h1 {
+    font-size: 2rem;
+    margin: 0.7rem 0;
+  }
+  h2 {
+    font-size: 1.75rem;
+    margin: 0.6rem 0;
+  }
+  h3 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+  }
+  h4 {
+    font-size: 1.4rem;
+    margin: 0.4rem 0;
+  }
+  h5 {
+    font-size: 1.3rem;
+    margin: 0.3rem 0;
+  }
+  h6 {
+    font-size: 1.2rem;
+    margin: 0.2rem 0;
+  }
+  a,
+  p,
+  span,
+  li,
+  input,
+  textarea,
+  button {
+    font-size: 1rem;
+    margin: 0;
+  }
+}
+
+header {
+  background-color: rgba(109, 38, 180, .8);
+  border-bottom: 2px solid rgba(174, 168, 211, 1);
+  position: fixed;
+  width: 100%;
+  z-index: @zIndex-overlay;
+}
+.navbar-list {
+  &-item {
+    display: inline-block;
+  }
+  &-link {
+    color: white;
+    display: inline-block;
+    padding: 20px;
+    text-decoration: none;
+    &:hover {
+      background-color: rgb(174, 168, 211);
+    }
+  }
+}
+
+#banner {
+  background-color: rgb(102, 51, 153);
+  position: relative;
+  text-align: center;
+  height: 800px;
+  &-textContainer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &-name {
+    color: white;
+    font-size: 70px;
+  }
+}
+.banner-about {
+  color: white;
+  font-size: 25px;
+}

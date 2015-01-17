@@ -1,0 +1,12 @@
+{
+  "name": "rperryng.github.io",
+  "version": "1.0.0",
+  "homepage": "https://github.com/rperryng/rperryng.github.io",
+  "authors": [
+    "Ryan Perry-Nguyen <ryanperrynguyen@gmail.com>"
+  ],
+  "dependencies": {
+    "normalize.css": "~3.0.2",
+    "pure": "~0.5.0"
+  }
+}
