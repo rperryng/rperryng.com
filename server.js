@@ -21,6 +21,10 @@ app.use('/resources', express.static(__dirname + '/client/dist'));
 app.use('/images', express.static(__dirname + '/client/images'));
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
 
+app.get('/resume', function (req, res) {
+  res.sendFile(__dirname + '/client/Resume.pdf');
+});
+
 // use custom routing middleware
 app.use(require('./server/home'));
 app.use(require('./server/projects'));
