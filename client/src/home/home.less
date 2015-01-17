@@ -1,4 +1,4 @@
-@color-theme: rgba(102, 51, 153, 1);
+@import "../common/lib.less";
 
 #banner {
   background-color: @color-theme;
@@ -44,14 +44,14 @@
 .project {
   &-item {
     padding: 20px;
+    text-decoration: none;
   }
   &-title {
     color: white;
     font-size: 2.3em;
-
   }
   &-image {
     border-radius: 6px;
-    margin-top: 80px;
+    padding: 40px;
   }
 }

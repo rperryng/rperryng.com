@@ -23,10 +23,12 @@
 <section id="projects">
   <div class="pure-g">
     {{#each projects}}
-    <div class="project-item u-centerText pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
-      <h3 class="project-title u-centerText u-noBold">{{this.title}}
-      <img class="project-image pure-img" src="{{this.imageUrl}}">
-    </div>
+    <a class="project-item u-centerText pure-u-1 pure-u-md-1-2 pure-u-lg-1-3" href="/projects/{{this.link}}">
+      <div>
+        <h3 class="project-title u-centerText u-noBold">{{this.title}}
+        <img class="project-image pure-img" src="{{this.imageUrl}}">
+      </div>
+    </a>
     {{/each}}
   </div>
 </section>

@@ -12,7 +12,7 @@ var paths = {
     styles: {
       theme: './client/src/common/*.less',
       home: './client/src/home/home.less',
-      projects: './client/src/pages/projects.less'
+      projects: './client/src/projects/projects.less'
     },
     scripts: {
       home: './client/src/home/home.js'

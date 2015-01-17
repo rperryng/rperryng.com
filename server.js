@@ -6,11 +6,7 @@ var express = require('express'),
 var port = process.env.PORT || 3000;
 var app = express();
 
-// app.get('/', function (req, res) {
-//   res.sendFile(__dirname + '/index.html');
-// });
-
-// sestup handlebars for view templating
+// setup handlebars for view templating
 var hbs = exphbs.create({
   defaultLayout: 'main',
   extname: '.hbs',
@@ -27,6 +23,7 @@ app.use('/bower_components', express.static(__dirname + '/bower_components'));
 
 // use custom routing middleware
 app.use(require('./server/home'));
+app.use(require('./server/projects'));
 
 // No other middlware handled the request, send a 404
 app.use(function (req, res) {
