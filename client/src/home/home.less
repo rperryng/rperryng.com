@@ -1,5 +1,7 @@
+@color-theme: rgba(102, 51, 153, 1);
+
 #banner {
-  background-color: rgba(102, 51, 153, 1);
+  background-color: @color-theme;
   text-align: center;
   height: 800px;
   &-name {
@@ -16,14 +18,15 @@
 }
 
 .image-me {
+  border: 6px solid @color-theme;
+  border-radius: 50%;
   height: 300px;
   width: 300px;
 }
-
 #about {
   padding: 40px;
   &-title {
-    color: rgba(102, 51, 153, 1);
+    color: @color-theme;
   }
   &-description {
     font-size: 20px;
@@ -35,7 +38,7 @@
   display: flex;
   flex-direction: horizontal;
   flex-wrap: nowrap;
-  background-color: rgba(102, 51, 153, 1);
+  background-color: @color-theme;
 }
 
 .project {
@@ -44,9 +47,11 @@
   }
   &-title {
     color: white;
+    font-size: 2.3em;
+
   }
   &-image {
     border-radius: 6px;
-    margin-top: 20px;
+    margin-top: 80px;
   }
 }

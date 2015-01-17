@@ -1,8 +1,8 @@
 <section id="banner" class="u-displayRelative">
   <div class="u-centerInParent">
-    <h1 id="banner-name" class="u-robotoSlab u-noBold">Ryan Perry-Nguyen</h1>
-    <h2 class="banner-about u-robotoSlab u-noBold">2A Waterloo Computer Engineering Student</h2>
-    <h2 id="banner-about-dev" class="banner-about u-robotoSlab u-noBold">Devoted Software Developer</h2>
+    <h1 id="banner-name" class="u-noBold">Ryan Perry-Nguyen</h1>
+    <h2 class="banner-about u-noBold">2A Waterloo Computer Engineering Student</h2>
+    <h2 id="banner-about-dev" class="banner-about u-noBold">Devoted Software Developer</h2>
   </div> 
 </section>
 
@@ -22,17 +22,11 @@
 
 <section id="projects">
   <div class="pure-g">
-    <div class="project-item pure-u-1 pure-u-md-1-2 pure-u-lg-1-3  u-centerText">
-      <h3 class="project-title u-centerText u-noBold">YoDoorbell</h3>
-      <img class="project-image pure-img" src="/images/yhack2.jpg">
+    {{#each projects}}
+    <div class="project-item u-centerText pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
+      <h3 class="project-title u-centerText u-noBold">{{this.title}}
+      <img class="project-image pure-img" src="{{this.imageUrl}}">
     </div>
-    <div class="project-item pure-u-1 pure-u-md-1-2 pure-u-lg-1-3  u-centerText">
-      <h3 class="project-title u-centerText u-noBold">ExploreTO</h3>
-      <img class="project-image pure-img" src="/images/ExploreTO.jpeg">
-    </div>
-    <div class="project-item pure-u-1 pure-u-md-1-2 pure-u-lg-1-3  u-centerText">
-      <h3 class="project-title u-centerText u-noBold">Secret Santa Matcher</h3>
-      <img class="project-image pure-img" src="/images/secretSanta.jpg">
-    </div>
+    {{/each}}
   </div>
 </section>

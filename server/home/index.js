@@ -1,6 +1,7 @@
 'use strict';
 
 var express = require('express');
+var projects = require('../../projects.json');
 
 var app = module.exports = express();
 var router = express.Router();
@@ -15,6 +16,7 @@ router.get('/', function (req, res) {
     ],
     appStyles: [
       'home.css'
-    ]
+    ],
+    projects: projects.data
   });
 });

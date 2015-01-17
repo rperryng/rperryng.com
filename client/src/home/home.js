@@ -4,7 +4,7 @@
 
   // http://www.flatuicolorpicker.com/all
   var colors = {
-    valencia:       "#D64541", 
+    valencia:       "#D64541",
     wax:            "#F1A9A0",
     honeyFlower:    "#674172",
     sanMarino:      "#446CB3",

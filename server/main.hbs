@@ -15,7 +15,10 @@
 
     <!-- resources -->
     <link type="text/css" rel="stylesheet" href="/resources/theme.css">
-    <link type="text/css" rel="stylesheet" href="/resources/home.css">
+
+    {{#each appStyles}}
+    <link type="text/css" rel="stylesheet" href="/public/{{this}}">
+    {{/each}}
 
     <title>Ryan Perry-Nguyen</title>
   </head>
@@ -39,44 +42,7 @@
     </header>
 
     <main>
-      <section id="banner" class="u-displayRelative">
-        <div class="u-centerInParent">
-          <h1 id="banner-name" class="u-noBold">Ryan Perry-Nguyen</h1>
-          <h2 class="banner-about u-noBold">2A Waterloo Computer Engineering Student</h2>
-          <h2 id="banner-about-dev" class="banner-about u-noBold">Devoted Software Developer</h2>
-        </div> 
-      </section>
-
-      <section id="about" class="pure-g u-widthWrapper">
-        <div class="u-centerText pure-u-1 pure-u-md-1-2">
-          <img class="image-me" src="/images/me.jpg">
-        </div>
-        <div class="pure-u-1 pure-u-md-1-2">
-          <h3 id="about-title">
-            About me
-          </h3>
-          <p id="about-description">
-            Hey there, I'm Ryan Perry-Nguyen.  I'm a passionate mobile, web, and aspiring full stack developer currently studying at the University of Waterloo.  Below you can find a list of hackathon and personal projects that I've finished in my spare time.  Click on any of them to read about them.
-          </p>
-        </div>
-      </section>
-
-      <section id="projects">
-        <div class="pure-g">
-          <div class="project-item pure-u-1 pure-u-md-1-2 pure-u-lg-1-3  u-centerText">
-            <h3 class="project-title u-centerText u-noBold">YoDoorbell</h3>
-            <img class="project-image pure-img" src="/images/yhack2.jpg">
-          </div>
-          <div class="project-item pure-u-1 pure-u-md-1-2 pure-u-lg-1-3  u-centerText">
-            <h3 class="project-title u-centerText u-noBold">ExploreTO</h3>
-            <img class="project-image pure-img" src="/images/ExploreTO.jpeg">
-          </div>
-          <div class="project-item pure-u-1 pure-u-md-1-2 pure-u-lg-1-3  u-centerText">
-            <h3 class="project-title u-centerText u-noBold">Secret Santa Matcher</h3>
-            <img class="project-image pure-img" src="/images/secretSanta.jpg">
-          </div>
-        </div>
-      </section>
+      {{{body}}}
     </main>
 
     <footer class="u-centerText">
@@ -102,7 +68,10 @@
         </li>
       </ul>
     </footer>
-    <script type="text/javascript" src="/resources/home.js"></script>
+
+    {{#each appScripts}}
+    <script type="text/javascript" src="/public/{{this}}"></script>
+    {{/each}}
   </body>
 
 </html>
