@@ -9,28 +9,42 @@ var plugins = require('gulp-load-plugins')({
 
 var paths = {
   source: {
-    theme: './client/src/common/*.less',
-    home: './client/src/pages/home.less',
-    projects: './client/src/pages/projects.less'
+    styles: {
+      theme: './client/src/common/*.less',
+      home: './client/src/home/home.less',
+      projects: './client/src/pages/projects.less'
+    },
+    scripts: {
+      home: './client/src/home/home.js'
+    }
   },
   build: {
-    root: './client/dist',
-    theme: './client/dist/theme?(.min).css',
-    home: './client/dist/home(.min).css',
-    projects: './client/dist/projects(.min).css'
+    styles: {
+      theme: './client/dist/theme?(.min).css',
+      home: './client/dist/home(.min).css',
+      projects: './client/dist/projects(.min).css'
+    },
+    scripts: {
+      home: './client/dist/home(.min).js'
+    },
+    root: './client/dist'
   }
 };
 
+// 
+// Styles
+// 
+
 gulp.task('styles-build-theme', function () {
-  return buildStylesStream(paths.source.theme, paths.build.theme, "theme.css");
+  return buildStylesStream(paths.source.styles.theme, paths.build.styles.theme, "theme.css");
 });
 
 gulp.task('styles-build-home', function () {
-  return buildStylesStream(paths.source.home, paths.build.home, "home.css");
+  return buildStylesStream(paths.source.styles.home, paths.build.styles.home, "home.css");
 });
 
 gulp.task('styles-build-projects', function () {
-  return buildStylesStream(paths.source.projects, paths.build.projects, "projects.css");
+  return buildStylesStream(paths.source.styles.projects, paths.build.styles.projects, "projects.css");
 });
 
 gulp.task('styles-build', [
@@ -58,8 +72,37 @@ function buildStylesStream(sourceFilePaths, staleFilePaths, buildFileName) {
 
 gulp.task('styles', ['styles-build']);
 
-gulp.task('default', ['styles'], function () {
-  gulp.watch(paths.source.theme, ['styles-build-theme']);
-  gulp.watch(paths.source.home, ['styles-build-home']);
-  gulp.watch(paths.source.projects, ['styles-build-projects']);
+//
+// Scripts
+//
+
+gulp.task('scripts-build-home', function () {
+  del(paths.build.scripts.home, {}, function () {
+    return gulp.src(paths.source.scripts.home)
+      .pipe(gulp.dest(paths.build.root))
+      .pipe(plugins.uglify({
+        mangle: true
+      }))
+      .pipe(plugins.rename({
+        extname: '.min.js'
+      }))
+      .pipe(gulp.dest(paths.build.root));
+  });
+
+});
+
+gulp.task('scripts-build', ['scripts-build-home']);
+
+gulp.task('scripts', ['scripts-build']);
+
+//
+// Watches
+// 
+
+gulp.task('default', ['styles', 'scripts'], function () {
+  gulp.watch(paths.source.styles.theme, ['styles-build-theme']);
+  gulp.watch(paths.source.styles.home, ['styles-build-home']);
+  gulp.watch(paths.source.styles.projects, ['styles-build-projects']);
+
+  gulp.watch(paths.source.scripts.home, ['scripts-build-home']);
 });
