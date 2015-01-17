@@ -74,3 +74,36 @@ header {
     }
   }
 }
+
+footer {
+  padding-top: 50px;
+  width: '100%';
+  text-align: center;
+}
+.icon {
+  background: url("/images/icons.png") no-repeat top left;
+  &-email {
+    background-position: 0 0; width: 32px; height: 32px;
+  }
+  &-github {
+    background-position: 0 -82px; width: 30px; height: 32px;
+  }
+  &-linkedin {
+    background-position: 0 -164px; width: 32px; height: 32px;
+  }
+  &-stackoverflow {
+    background-position: 0 -246px; width: 32px; height: 32px;
+  }
+}
+.contactList {
+  display:inline-block;
+  list-style: none;
+  text-align:left;
+  padding: 0;
+  &-item {
+    line-height: 60px;
+  }
+  &-link {
+    margin-left: 15px;
+  }
+}
