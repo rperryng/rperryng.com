@@ -1,33 +1,39 @@
 @import "../common/lib.less";
 
-#banner {
+#hero {
   // background-color: @color-theme;
-  background-image: url("/images/yhack3.jpg");
+  background-image: url("/images/hero.jpg");
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
   text-align: center;
   &-name {
     color: white;
-    font-size: 6vw;
+    font-size: 5vw;
   }
   &-about-dev {
     border-top: 1px solid white;
   }
 }
-.banner-about {
+.hero-about {
   color: white;
-  font-size: 4vw;
+  font-size: 3vw;
 }
 
 @media(max-width: 1024px) {
-  #banner-textContainer {
+  #hero-textContainer {
     width: 80%;
+  }
+  #hero-name {
+    font-size: 6vw;
+  }
+  .hero-about {
+    font-size: 4vw;
   }
 }
 
 .image-me {
-  border: 6px solid @color-theme;
+  border: 4px solid @color-theme;
   border-radius: 50%;
   height: 300px;
   width: 300px;

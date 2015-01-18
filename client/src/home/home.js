@@ -41,6 +41,5 @@
 })();
 
 window.onload = window.onresize = function () {
-  bannerSize = (window.innerHeight < 400) ? '400px' : window.innerHeight + 'px';
-  document.getElementById('banner').style.height = bannerSize;
+  document.getElementById('hero').style.height = window.innerHeight + 'px';
 };
