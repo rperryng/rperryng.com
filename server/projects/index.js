@@ -18,10 +18,10 @@ router.get('/:projectTitle', function (req, res, next) {
     if (projectTitle === project.title) {
       res.render('project', {
         appStyles: [
-          'projects.css'
+          'projects.min.css'
         ],
         appScripts: [
-          'projects.js'
+          'projects.min.js'
         ],
         project: project
       });

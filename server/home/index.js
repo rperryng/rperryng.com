@@ -17,10 +17,10 @@ router.get('/', function (req, res) {
 
   res.render('home', {
     appScripts: [
-      'home.js'
+      'home.min.js'
     ],
     appStyles: [
-      'home.css'
+      'home.min.css'
     ],
     projects: projects
   });
