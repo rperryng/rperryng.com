@@ -7,10 +7,9 @@
   background-position: center center;
   background-attachment: fixed;
   text-align: center;
-  height: 800px;
   &-name {
     color: white;
-    font-size: 70px;
+    font-size: 6vw;
   }
   &-about-dev {
     border-top: 1px solid white;
@@ -18,7 +17,13 @@
 }
 .banner-about {
   color: white;
-  font-size: 25px;
+  font-size: 4vw;
+}
+
+@media(max-width: 1024px) {
+  #banner-textContainer {
+    width: 80%;
+  }
 }
 
 .image-me {
