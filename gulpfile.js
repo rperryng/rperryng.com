@@ -15,7 +15,8 @@ var paths = {
       projects: './client/src/projects/projects.less'
     },
     scripts: {
-      home: './client/src/home/home.js'
+      home: './client/src/home/home.js',
+      projects: './client/src/projects/projects.js'
     }
   },
   build: {
@@ -25,7 +26,8 @@ var paths = {
       projects: './client/dist/projects(.min).css'
     },
     scripts: {
-      home: './client/dist/home(.min).js'
+      home: './client/dist/home(.min).js',
+      projects: './client/dist/projects(.min).js'
     },
     root: './client/dist'
   }
@@ -77,8 +79,18 @@ gulp.task('styles', ['styles-build']);
 //
 
 gulp.task('scripts-build-home', function () {
-  del(paths.build.scripts.home, {}, function () {
-    return gulp.src(paths.source.scripts.home)
+  return buildScriptsStream(paths.source.scripts.home, paths.build.scripts.home);
+});
+
+gulp.task('scripts-build-projects', function () {
+  return buildScriptsStream(paths.source.scripts.projects, paths.build.scripts.projects);
+});
+
+gulp.task('scripts-build', ['scripts-build-home', 'scripts-build-projects']);
+
+function buildScriptsStream(sourceFilePaths, staleFilePaths) {
+  del(staleFilePaths, {}, function () {
+    return gulp.src(sourceFilePaths)
       .pipe(gulp.dest(paths.build.root))
       .pipe(plugins.uglify({
         mangle: true
@@ -88,10 +100,7 @@ gulp.task('scripts-build-home', function () {
       }))
       .pipe(gulp.dest(paths.build.root));
   });
-
-});
-
-gulp.task('scripts-build', ['scripts-build-home']);
+}
 
 gulp.task('scripts', ['scripts-build']);
 
@@ -105,4 +114,5 @@ gulp.task('default', ['styles', 'scripts'], function () {
   gulp.watch(paths.source.styles.projects, ['styles-build-projects']);
 
   gulp.watch(paths.source.scripts.home, ['scripts-build-home']);
+  gulp.watch(paths.source.scripts.projects, ['scripts-build-projects']);
 });

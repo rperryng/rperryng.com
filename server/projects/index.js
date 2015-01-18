@@ -20,6 +20,9 @@ router.get('/:projectTitle', function (req, res, next) {
         appStyles: [
           'projects.css'
         ],
+        appScripts: [
+          'projects.js'
+        ],
         project: project
       });
 

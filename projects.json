@@ -5,7 +5,7 @@
       "subtitle": "YHack 2014",
       "description": "YoDoorbell was a project born out of Yale's 2014 hackathon - YHack.  The idea of YoDoorbell was to enhance the everyday doorbell.  When a RFID enabled card was present in front of the Tessel, a Yo containing a picture of the guest would be sent to the registered user.  If the user sent a Yo to the \"YoDoorbell\" account the Tessel would take a picture, gather a temperature reading, and send the data right back to you via the Yo API.  YoDoorbell was built using Node.js and ExpressJS for its backend.  Node.js was also used to program the Tessel microcontroller.",
       "imageUrl": "/images/yhack2.jpg",
-      "github": "https://github.com/rperryng/yhack-2014"
+      "githubUrl": "https://github.com/rperryng/yhack-2014"
     },
     {
       "title": "ExploreTO",
@@ -13,7 +13,7 @@
       "description": "ExploreTO was a service built during Toronto's Startup Weekend.  It's aim was to partner with local businesses to provide discounted prices for new things to try on a regular basis.  ExploreTO was a project with modern technologies.  This included Node.js, ExpressJS, MongoDB, AngularJS, HTML, CSS, and more.  ExploreTO was a collaborative project, as I participated with several non-techs, designers, and other developers on the project.",
       "award": "Doer award",
       "imageUrl": "/images/ExploreTO.jpeg",
-      "github": "https://github.com/rperryng/ExploreTO"
+      "githubUrl": "https://github.com/rperryng/ExploreTO"
     },
     {
       "title": "Secret Santa Matcher",
