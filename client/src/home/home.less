@@ -61,6 +61,11 @@
   &-item {
     padding: 20px;
     text-decoration: none;
+    transition: 0.2s;
+    &:hover {
+      box-shadow: 0 4px 10px 6px rgba(0, 0, 0, 0.3);
+      z-index: @zIndex-overlay;
+    }
   }
   &-title {
     color: white;
@@ -68,6 +73,6 @@
   }
   &-image {
     border-radius: 6px;
-    padding: 40px
+    padding: 40px;
   }
 }
