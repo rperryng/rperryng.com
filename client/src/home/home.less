@@ -1,5 +1,4 @@
 @import "../common/lib.less";
-
 #hero {
   // background-color: @color-theme;
   background-image: url("/images/hero.jpg");
@@ -19,7 +18,6 @@
   color: white;
   font-size: 3vw;
 }
-
 @media(max-width: 1024px) {
   #hero-textContainer {
     width: 80%;
@@ -31,7 +29,6 @@
     font-size: 4vw;
   }
 }
-
 .image-me {
   border: 4px solid @color-theme;
   border-radius: 50%;
@@ -49,15 +46,14 @@
     text-align: justify;
   }
 }
-
 #projects {
-  display: flex;
-  flex-direction: horizontal;
-  flex-wrap: nowrap;
-  flex-basis: auto;
+  &-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
   background-color: @color-theme;
 }
-
 .project {
   &-item {
     padding: 20px;

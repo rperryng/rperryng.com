@@ -1,88 +1,86 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="theme-color" color="#663399">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="theme-color" color="#663399">
 
-    <!-- icon in the highest resolution we need it for -->
-    <link rel="icon" sizes="228x228" href="/images/favicon.png">
-    <!-- reuse same icon for Safari -->
-    <link rel="apple-touch-icon" href="/images/favicon.png">
+  <link rel="icon" sizes="228x228" href="/images/favicon.png">
+  <link rel="apple-touch-icon" href="/images/favicon.png">
 
-    <!-- librariess --> 
-    <link href="http://fonts.googleapis.com/css?family=Montserrat|Roboto+Condensed:400,300|Open+Sans:700,400|Roboto+Slab:400,300" rel="stylesheet" type="text/css">
-    <link type="text/css" rel="stylesheet" href="/bower_components/normalize.css/normalize.css">
-    <link type="text/css" rel="stylesheet" href="/bower_components/pure/base-min.css">
-    <link type="text/css" rel="stylesheet" href="/bower_components/pure/grids-min.css">
-    <link type="text/css" rel="stylesheet" href="/bower_components/pure/grids-responsive-min.css">
+  <!-- librariess -->
+  <link href="http://fonts.googleapis.com/css?family=Montserrat|Roboto+Condensed:400,300|Open+Sans:700,400|Roboto+Slab:400,300" rel="stylesheet" type="text/css">
+  <link type="text/css" rel="stylesheet" href="/bower_components/normalize.css/normalize.css">
+  <link type="text/css" rel="stylesheet" href="/bower_components/pure/base-min.css">
+  <link type="text/css" rel="stylesheet" href="/bower_components/pure/grids-min.css">
+  <link type="text/css" rel="stylesheet" href="/bower_components/pure/grids-responsive-min.css">
 
-    <!-- resources -->
-    <link type="text/css" rel="stylesheet" href="/resources/theme.min.css">
+  <!-- resources -->
+  <link type="text/css" rel="stylesheet" href="/resources/theme.min.css">
 
-    {{#each appStyles}}
+  {{#each appStyles}}
     <link type="text/css" rel="stylesheet" href="/resources/{{this}}">
-    {{/each}}
+  {{/each}}
 
-    <title>Ryan Perry-Nguyen</title>
-  </head>
+  <title>Ryan Perry-Nguyen</title>
+</head>
 
-  <body>
-    <header>
-      <nav id="navbar">
-        <ul class="u-widthWrapper">
-          <li class="navbar-list-item">
-            <a class="navbar-list-link" href="/">
+<body>
+  <header>
+    <nav id="navbar">
+      <ul class="u-widthWrapper">
+        <li class="navbar-list-item">
+          <a class="navbar-list-link" href="/">
               Home
             </a>
-          </li>
-          <li class="navbar-list-item">
-            <a class="navbar-list-link" href="/resume" target="_blank" >
+        </li>
+        <li class="navbar-list-item">
+          <a class="navbar-list-link" href="/resume" target="_blank">
               Resume
             </a>
-          </li>
-          <li class="navbar-list-item">
-            <a class="navbar-list-link" href="https://github.com/rperryng/rperryng.com" target="_blank" >
+        </li>
+        <li class="navbar-list-item">
+          <a class="navbar-list-link" href="https://github.com/rperryng/rperryng.com" target="_blank">
               Source
             </a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-
-    <main>
-      {{{body}}}
-    </main>
-
-    <footer class="u-centerText">
-      <h3 class="u-noBold">Like what you see?</h3>
-      <h5 class="u-noBold">Reach out or find out more about me from the links below</h5>
-
-      <ul class="contactList">
-        <li class="contactList-item">
-          <div class="icon icon-email u-inlineBlock u-centerVertical"></div>
-          <a class="contactList-link u-inlineBlock u-centerVertical" href="mailto:ryanperrynguyen@gmail.com">ryanperrynguyen@gmail.com</a>
-        </li>
-        <li class="contactList-item">
-          <div class="icon icon-linkedin u-inlineBlock u-centerVertical"></div>
-          <a class="contactList-link u-inlineBlock u-centerVertical" href="http://ca.linkedin.com/in/ryanperrynguyen" target="_blank">/in/ryanperrynguyen</a>
-        </li>
-        <li class="contactList-item">
-          <div class="icon icon-github u-inlineBlock u-centerVertical"></div>
-          <a class="contactList-link u-inlineBlock u-centerVertical" href="http://www.github.com/rperryng" target="_blank">/rperryng</a>
-        </li>
-        <li class="contactList-item">
-          <div class="icon icon-stackoverflow u-inlineBlock u-centerVertical"></div>
-          <a class="contactList-link u-inlineBlock u-centerVertical" href="http://stackoverflow.com/users/3194316/rperryng" target="_blank">/users/3194316/rperryng</a>
         </li>
       </ul>
-    </footer>
+    </nav>
+  </header>
 
-    {{#each appScripts}}
+  <main>
+    {{{body}}}
+  </main>
+
+  <footer class="u-centerText">
+    <h3 class="u-noBold">Like what you see?</h3>
+    <h5 class="u-noBold">Reach out or find out more about me from the links below</h5>
+
+    <ul class="contactList">
+      <li class="contactList-item">
+        <div class="icon icon-email u-inlineBlock u-centerVertical"></div>
+        <a class="contactList-link u-inlineBlock u-centerVertical" href="mailto:ryanperrynguyen@gmail.com">ryanperrynguyen@gmail.com</a>
+      </li>
+      <li class="contactList-item">
+        <div class="icon icon-linkedin u-inlineBlock u-centerVertical"></div>
+        <a class="contactList-link u-inlineBlock u-centerVertical" href="http://ca.linkedin.com/in/ryanperrynguyen" target="_blank">/in/ryanperrynguyen</a>
+      </li>
+      <li class="contactList-item">
+        <div class="icon icon-github u-inlineBlock u-centerVertical"></div>
+        <a class="contactList-link u-inlineBlock u-centerVertical" href="http://www.github.com/rperryng" target="_blank">/rperryng</a>
+      </li>
+      <li class="contactList-item">
+        <div class="icon icon-stackoverflow u-inlineBlock u-centerVertical"></div>
+        <a class="contactList-link u-inlineBlock u-centerVertical" href="http://stackoverflow.com/users/3194316/rperryng" target="_blank">/users/3194316/rperryng</a>
+      </li>
+    </ul>
+  </footer>
+
+  {{#each appScripts}}
     <script type="text/javascript" src="/resources/{{this}}"></script>
-    {{/each}}
-  </body>
+  {{/each}}
+</body>
 
 </html>
