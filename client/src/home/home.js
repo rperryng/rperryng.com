@@ -1,3 +1,4 @@
-window.onload = window.onresize = function () {
-  document.getElementById('hero').style.height = window.innerHeight + 'px';
-};
+function setProjectPadding(element, newPadding) {
+  var image = element.getElementsByTagName('img')[0];
+  image.style.padding = newPadding + 'px';
+}

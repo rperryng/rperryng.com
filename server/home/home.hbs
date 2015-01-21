@@ -23,12 +23,12 @@
 <section id="projects">
   <div id="projects-grid" class="pure-g">
     {{#each projects}}
-      <a class="project-item u-centerText pure-u-1 pure-u-sm-1-2 pure-u-md-1-3 pure-u-lg-1-4" style="background-color: #{{this.backgroundColor}}" target="_blank" href="/projects/{{this.link}}">
+      <a class="project-item u-centerText pure-u-1 pure-u-sm-1-2 pure-u-md-1-3 pure-u-lg-1-4" style="background-color: #{{this.backgroundColor}}" target="_blank" href="/projects/{{this.link}}" onmouseover="setProjectPadding(this, 20)" onmouseout="setProjectPadding(this, 40)">
         <div>
-          <h3 class="project-title u-centerText u-noBold">{{this.title}}
-        <img class="project-image pure-img" src="{{this.imageUrl}}">
-      </div>
-    </a>
+          <h3 class="project-title u-centerText u-noBold">{{this.title}}</h1>
+          <img class="project-image pure-img" src="{{this.imageUrl}}">
+        </div>
+      </a>
     {{/each}}
   </div>
 </section>

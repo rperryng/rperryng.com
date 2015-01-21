@@ -6,6 +6,8 @@
   background-position: center center;
   background-attachment: fixed;
   text-align: center;
+  height: 100vh;
+  width: 100vw;
   &-name {
     color: white;
     font-size: 5vw;
@@ -61,6 +63,7 @@
     transition: 0.2s;
     &:hover {
       box-shadow: 0 4px 10px 6px rgba(0, 0, 0, 0.3);
+      text-shadow: 0 0 3px white;
       z-index: @zIndex-overlay;
     }
   }
@@ -71,5 +74,9 @@
   &-image {
     border-radius: 6px;
     padding: 40px;
+    transition: 0.3s;
+    &:hover {
+      padding: 20px;
+    }
   }
 }
