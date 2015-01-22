@@ -3,9 +3,6 @@
     "__dirname": true,
     "module": true,
     "process": true,
-    "require": true,
-
-    "angular": true,
-    "marked": true
+    "require": true
   }
 }

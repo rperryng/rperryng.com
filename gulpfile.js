@@ -58,17 +58,17 @@ gulp.task('styles-build', [
 function buildStylesStream(sourceFilePaths, staleFilePaths, buildFileName) {
   del(staleFilePaths, {}, function () {
     return gulp.src(sourceFilePaths)
-    .pipe(plugins.less())
-    .pipe(plugins.concat(buildFileName))
-    .pipe(plugins.autoprefixer({
-      browsers: ['last 2 versions']
-    }))
-    .pipe(gulp.dest(paths.build.root))
-    .pipe(plugins.minifyCss())
-    .pipe(plugins.rename({
-      extname: '.min.css'
-    }))
-    .pipe(gulp.dest(paths.build.root));
+      .pipe(plugins.less())
+      .pipe(plugins.concat(buildFileName))
+      .pipe(plugins.autoprefixer({
+        browsers: ['last 2 versions']
+      }))
+      .pipe(gulp.dest(paths.build.root))
+      .pipe(plugins.minifyCss())
+      .pipe(plugins.rename({
+        extname: '.min.css'
+      }))
+      .pipe(gulp.dest(paths.build.root));
   });
 }
 

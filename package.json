@@ -1,10 +1,10 @@
 {
-  "name": "rperryng.github.io",
+  "name": "rperryng.com",
   "author": "Ryan Perry-Nguyen",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rperryng/rperryng.github.io.git"
+    "url": "https://github.com/rperryng/rperryng.com.git"
   },
   "dependencies": {
     "express": "^4.11.0",
