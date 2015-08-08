@@ -32,3 +32,6 @@ npm-debug.log
 
 # Built files
 client/dist
+
+# Sekrets
+.env
