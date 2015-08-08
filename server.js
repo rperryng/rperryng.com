@@ -3,14 +3,17 @@
 var express = require('express');
 var env     = require('node-env-file');
 var morgan  = require('morgan');
+var logger  = require('logger');
 
 env(__dirname + '/.env');
 
 // Application setup
 var app = express();
-app.use(morgan('dev'));
 app.set('view engine', 'jade');
 app.set('views', __dirname + './server/views');
+
+// Request logging
+app.use(morgan('dev', {stream: logger.morganStream}));
 
 // Routes
 app.use(require('./server/home'));
@@ -22,11 +25,11 @@ app.use(function (req, res, next) {
 
 // Error handling
 app.use(function (req, res, next, err) {
-  console.error(err.stack);
+  logger.error(err.stack);
   res.status(500).json({
     error: 'Internal server error'
   });
 });
 
 app.listen(process.env.PORT);
-console.log('listening on port %d', process.env.PORT);
+logger.info('listening on port %d', process.env.PORT);
