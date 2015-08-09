@@ -27,6 +27,7 @@ build/Release
 node_modules/*
 node_modules/logger/node_modules
 !node_modules/logger
+bower_components
 
 # Debug log from npm
 npm-debug.log

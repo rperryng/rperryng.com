@@ -3,6 +3,20 @@ html
   head
     title Ryan Perry-Nguyen
     
+    // google fonts
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans', rel='stylesheet', type='text/css')
+    
+    // Normalize.css
+    link(href='/bower/normalize.css/normalize.css', rel='stylesheet', type='text/css')
+    
+    link(href='/client/theme.css', rel='stylesheet', type='text/css')
+    
+    each style in styles 
+      link(href='/client/' + style + '.css', rel='stylesheet', type='text/css')
+    
   body
-    h1 Jade produces some pretty terrible error messages sometimes
-    block content
+    header
+      h4 hello world
+    
+    main
+      block content

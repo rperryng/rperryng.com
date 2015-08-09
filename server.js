@@ -15,6 +15,10 @@ app.set('views', __dirname + './server/views');
 // Request logging
 app.use(morgan('dev', {stream: logger.morganStream}));
 
+// Static assets
+app.use('/client', express.static(__dirname + '/client/dist'));
+app.use('/bower', express.static(__dirname + '/bower_components'));
+
 // Routes
 app.use(require('./server/home'));
 
@@ -23,12 +27,10 @@ app.use(function (req, res, next) {
   res.sendStatus(404);
 });
 
-// Error handling
-app.use(function (req, res, next, err) {
+// Error logging
+app.use(function (err, req, res, next) {
   logger.error(err.stack);
-  res.status(500).json({
-    error: 'Internal server error'
-  });
+  next(err);
 });
 
 app.listen(process.env.PORT);
