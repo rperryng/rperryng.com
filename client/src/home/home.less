@@ -1,3 +1,52 @@
-.name {
-  font-weight: bold;
+// Hero section
+@import "../common/theme.less";
+
+@smallScreen: ~"only screen and (max-width: 1024px)";
+
+.hero {
+  background-image: url('/images/hero.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  text-align: center;
+
+  &-textContainer {
+    align-self: center;
+    margin: auto;
+    max-width: 50%;
+  }
+
+  @media @smallScreen {
+    &-textContainer {
+      max-width: 90%;
+    }
+  }
+
+  &-name {
+    border-bottom: 2px solid #ffffff;
+    color: #ffffff;
+    font-size: 4.5vw;
+    padding: 0 10px 12px;
+    text-align: center;
+  }
+
+  @media @smallScreen {
+    &-name {
+      font-size: 6vw;
+    }
+  }
+
+  &-subtitle {
+    .f-proximaNova;
+    color: #ffffff;
+    font-size: 1.8vw;
+    padding-top: 12px;
+    text-transform: uppercase;
+  }
+
+  @media @smallScreen {
+    &-subtitle {
+      font-size: 3vw;
+    }
+  }
 }

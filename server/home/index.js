@@ -11,6 +11,7 @@ app.set('view engine', 'jade');
 
 router.get('/', function (req, res, next) {
   res.render('home', {
-    styles: ['home']
+    styles: ['home'],
+    fullScreenBanner: true
   });
 });

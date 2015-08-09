@@ -4,19 +4,19 @@ html
     title Ryan Perry-Nguyen
     
     // google fonts
-    link(href='http://fonts.googleapis.com/css?family=Open+Sans', rel='stylesheet', type='text/css')
+    link(href="http://fonts.googleapis.com/css?family=Open+Sans", rel="stylesheet", type="text/css")
     
     // Normalize.css
-    link(href='/bower/normalize.css/normalize.css', rel='stylesheet', type='text/css')
+    link(href="/bower/normalize.css/normalize.css", rel="stylesheet", type="text/css")
     
-    link(href='/client/theme.css', rel='stylesheet', type='text/css')
+    link(href="/client/theme.css", rel="stylesheet", type="text/css")
     
     each style in styles 
-      link(href='/client/' + style + '.css', rel='stylesheet', type='text/css')
+      link(href="/client/" + style + ".css", rel="stylesheet", type="text/css")
     
   body
     header
-      h4 hello world
+      h4 Header
     
-    main
+    main(class = fullScreenBanner ? "u-fullHeight" : "")
       block content

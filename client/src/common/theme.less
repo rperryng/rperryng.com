@@ -1,4 +1,5 @@
-// @import "lib.less";
+@import 'fonts.less';
+@import 'util.less';
 
 *,
 *::before,
@@ -6,31 +7,39 @@
   box-sizing: border-box;
 }
 
-html body {
+html, body {
+  height: 100%;
+  margin: 0;
   * {
     font-family: 'Open Sans', sans-serif;
   }
   h1 {
+    .f-proximaNova--heavy;
     font-size: 2rem;
     margin: 0.7rem 0;
   }
   h2 {
+    .f-proximaNova--heavy;
     font-size: 1.75rem;
     margin: 0.6rem 0;
   }
   h3 {
+    .f-proximaNova--heavy;
     font-size: 1.5rem;
     margin: 0.5rem 0;
   }
   h4 {
+    .f-proximaNova--heavy;
     font-size: 1.4rem;
     margin: 0.4rem 0;
   }
   h5 {
+    .f-proximaNova--heavy;
     font-size: 1.3rem;
     margin: 0.3rem 0;
   }
   h6 {
+    .f-proximaNova--heavy;
     font-size: 1.2rem;
     margin: 0.2rem 0;
   }
@@ -44,4 +53,8 @@ html body {
     font-size: 1rem;
     margin: 0;
   }
+}
+
+.fullScreenBanner {
+  min-height: 100%;
 }

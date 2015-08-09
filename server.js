@@ -17,6 +17,8 @@ app.use(morgan('dev', {stream: logger.morganStream}));
 
 // Static assets
 app.use('/client', express.static(__dirname + '/client/dist'));
+app.use('/fonts', express.static(__dirname + '/client/resources/fonts'));
+app.use('/images', express.static(__dirname + '/client/resources/images'));
 app.use('/bower', express.static(__dirname + '/bower_components'));
 
 // Routes

@@ -57,6 +57,6 @@ function buildStylesStream(sourceFilePaths, staleFilePaths, buildFileName) {
 }
 
 gulp.task('default', ['styles'], function () {
-  gulp.watch(paths.source.styles.theme, ['styles-build-theme']);
-  gulp.watch(paths.source.styles.home, ['styles-build-home']);
+  gulp.watch(paths.source.styles.theme, ['styles-theme']);
+  gulp.watch(paths.source.styles.home, ['styles-home']);
 });
