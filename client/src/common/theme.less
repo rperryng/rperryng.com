@@ -55,6 +55,35 @@ html, body {
   }
 }
 
+header {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.35);
+  position: fixed;
+  width: 100%;
+}
+
+.navbar {
+  text-align: center;
+
+  &-list {
+    padding: 0;
+  }
+
+  &-list-item {
+    display: inline-block;
+  }
+
+  &-link {
+    color: rgba(255, 255, 255, 0.7);
+    padding: 15px;
+    text-transform: uppercase;;
+    text-decoration: none;
+    &:hover {
+      color: rgba(255, 255, 255, 1);
+    }
+  }
+}
+
 .fullScreenBanner {
   min-height: 100%;
 }

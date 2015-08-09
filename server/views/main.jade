@@ -16,7 +16,16 @@ html
     
   body
     header
-      h4 Header
+      nav.navbar
+        ul.navbar-list
+          li.navbar-list-item
+            a.navbar-link(href='/') Home
+          li.navbar-list-item
+            a.navbar-link(href='/resume') Resume
+          li.navbar-list-item
+            a.navbar-link(href='https://github.com/rperryng/rperryng.com') Source
+          li.navbar-list-item
+            a.navbar-link(href='/') Wao
     
     main(class = fullScreenBanner ? "u-fullHeight" : "")
       block content
