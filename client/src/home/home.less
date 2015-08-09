@@ -1,8 +1,8 @@
-// Hero section
 @import "../common/fonts.less";
 
 @smallScreen: ~"only screen and (max-width: 1024px)";
 
+// Hero
 .hero {
   background-image: url('/images/hero.png');
   background-size: cover;
@@ -56,5 +56,47 @@
 
   &-seperatorGraphic {
     width: 3.5vw;
+  }
+}
+
+.about {
+  align-items: center;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  margin: 24px auto;
+
+  @media @smallScreen {
+    flex-flow: row wrap;
+  }
+
+  &-picContainer {
+    text-align: center;
+    @media @smallScreen {
+      flex-grow: 1;
+    }
+  }
+
+  &-pic {
+    border: 4px solid rgb(0, 0, 0);
+    border-radius: 50%;
+    height: 300px;
+    width: 300px;
+  }
+
+  &-descriptionContainer {
+    padding: 40px;
+  }
+
+  &-descriptionTitle {
+    margin-bottom: 10px;
+  }
+
+  &-descriptionText {
+    .f-proximaNova;
+    font-size: 1.2rem;
+    color: rgb(93, 93, 93);
+    line-height: 32px;
+    text-align: justify;
   }
 }
