@@ -4,7 +4,7 @@
 
 // Hero
 .hero {
-  background-image: url('/images/hero.png');
+  background-image: url('/images/hero_dark.jpg');
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
@@ -64,7 +64,7 @@
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
-  margin: 24px auto;
+  margin: 24px auto 0;
 
   @media @smallScreen {
     flex-flow: row wrap;
@@ -78,10 +78,7 @@
   }
 
   &-pic {
-    border: 4px solid rgb(0, 0, 0);
-    border-radius: 50%;
-    height: 300px;
-    width: 300px;
+    height: 400px;
   }
 
   &-descriptionContainer {
@@ -99,4 +96,8 @@
     line-height: 32px;
     text-align: justify;
   }
+}
+
+.projects {
+
 }
