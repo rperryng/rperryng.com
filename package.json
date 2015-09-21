@@ -21,6 +21,7 @@
     "winston": "^1.0.1"
   },
   "devDependencies": {
+    "browser-sync": "^2.9.4",
     "del": "^1.2.0",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^2.3.1",

@@ -1,7 +1,11 @@
 'use strict';
 
 var gulp = require('gulp');
+var env = require('node-env-file');
+var browserSync = require('browser-sync').create();
 var del = require('del');
+
+env(__dirname + '/.env');
 
 var plugins = require('gulp-load-plugins')({
   rename: {
@@ -56,7 +60,13 @@ function buildStylesStream(sourceFilePaths, staleFilePaths, buildFileName) {
   });
 }
 
-gulp.task('default', ['styles'], function () {
+gulp.task('browser-sync', function () {
+  browserSync.init({
+    proxy: 'localhost:' + process.env.PORT
+  });
+});
+
+gulp.task('default', ['browser-sync', 'styles'], function () {
   gulp.watch(paths.source.styles.theme, ['styles-theme']);
   gulp.watch(paths.source.styles.home, ['styles-home']);
 });
