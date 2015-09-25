@@ -7,6 +7,9 @@ html
     // google fonts
     link(href="http://fonts.googleapis.com/css?family=Open+Sans", rel="stylesheet", type="text/css")
     
+    // fontawesome
+    link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet", type="text/css")
+    
     // Normalize.css
     link(href="/bower/normalize.css/normalize.css", rel="stylesheet", type="text/css")
     
@@ -20,13 +23,34 @@ html
       nav.navbar
         ul.navbar-list
           li.navbar-list-item
-            a.navbar-link(href='/') Home
+            a.navbar-link(href="/") Home
           li.navbar-list-item
-            a.navbar-link(href='/resume') Resume
+            a.navbar-link(href="/resume") Resume
           li.navbar-list-item
-            a.navbar-link(href='https://github.com/rperryng/rperryng.com') Source
+            a.navbar-link(href="https://github.com/rperryng/rperryng.com") Source
           li.navbar-list-item
-            a.navbar-link(href='/') Wao
+            a.navbar-link(href="/") Wao
     
-    main(class = fullScreenBanner ? "u-fullHeight" : "")
-      block content
+    block content
+    
+    footer.footer
+      div.footer-wrapper.u-widthWrapper
+        h3.footer-title Like what you see?
+        h4.footer-subtitle Feel free to reach out
+        ul.contactList.fa-ul
+          li.contactList-item
+            a.contactList-link(href="mailto:ryanperrynguyen@gmail.com")
+              i.fa.fa-li.fa-envelope-o.contactList-icon
+              | ryanperrynguyen@gmail.com
+          li.contactList-item
+            a.contactList-link(href="http://ca.linkedin.com/in/ryanperrynguyen")
+              i.fa.fa-li.fa-linkedin.contactList-icon
+              | /in/ryanperrynguyen
+          li.contactList-item
+            a.contactList-link(href="http://www.github.com/rperryng")
+              i.fa.fa-li.fa-github.contactList-icon
+              | Github
+          li.contactList-item
+            a.contactList-link(href="http://stackoverflow.com/users/3194316/rperryng")
+              i.fa.fa-li.fa-stack-overflow.contactList-icon
+              | Stack Overflow
