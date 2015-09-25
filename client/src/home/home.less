@@ -1,10 +1,11 @@
 @import "../common/fonts.less";
+@import "../common/zIndex.less";
 
 @smallScreen: ~"only screen and (max-width: 1024px)";
 
 // Hero
 .hero {
-  background-image: url('/images/hero_dark.jpg');
+  background-image: url("/images/hero_dark.jpg");
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
@@ -100,5 +101,54 @@
 }
 
 .projects {
+  background-color: rgb(44, 62, 80);
+  z-index: @zIndex-1;
 
+  &-wrapper {
+    margin: auto;
+    padding: 10px 0;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-contet: flex-start;
+  }
+
+  &-itemContainer {
+    display: block;
+    position: relative;
+    margin: 10px;
+  }
+
+  &-itemPic {
+    height: 300px;
+    position: relative;
+    width: 300px;
+    vertical-align: middle;
+  }
+
+  &-itemLink {
+    .f-proximaNova;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: rgb(255, 255, 255);
+    display: inline-block;
+    font-size: 1.6em;
+    height: 300px;
+    left: 0;
+    line-height: 300px;
+    opacity: 0;
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    transition: opacity 250ms;
+    top: 0;
+    width: 300px;
+    vertical-align: middle;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
 }

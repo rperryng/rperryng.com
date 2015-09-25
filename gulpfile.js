@@ -3,6 +3,7 @@
 var gulp = require('gulp');
 var env = require('node-env-file');
 var browserSync = require('browser-sync').create();
+var nodemon = require('gulp-nodemon');
 var del = require('del');
 
 env(__dirname + '/.env');
@@ -62,7 +63,22 @@ function buildStylesStream(sourceFilePaths, staleFilePaths, buildFileName) {
 
 gulp.task('browser-sync', function () {
   browserSync.init({
-    proxy: 'localhost:' + process.env.PORT
+    proxy: 'localhost:' + process.env.PORT,
+    files: ['client/dist', 'client/resources'],
+    browser: 'google chrome'
+  });
+});
+
+gulp.task('nodemon', function (callback) {
+  var started = false;
+
+  return nodemon({
+    script: 'server.js'
+  }).on('start', function () {
+    if (!started) {
+      callback();
+      started = true;
+    }
   });
 });
 

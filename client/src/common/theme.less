@@ -1,5 +1,6 @@
-@import 'fonts.less';
-@import 'util.less';
+@import "fonts.less";
+@import "util.less";
+@import "zIndex.less";
 
 *,
 *::before,
@@ -11,7 +12,7 @@ html, body {
   height: 100%;
   margin: 0;
   * {
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", @fallbackFont;
   }
   h1 {
     .f-proximaNova--heavy;
@@ -60,6 +61,7 @@ header {
   border-bottom: 2px solid rgba(255, 255, 255, 0.35);
   position: fixed;
   width: 100%;
+  z-index: @zIndex-9;
 }
 
 .navbar {
