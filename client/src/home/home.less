@@ -101,9 +101,8 @@
   }
 }
 
-.projects {
+.project {
   background-color: rgb(44, 62, 80);
-  z-index: @zIndex-1;
 
   &-wrapper {
     margin: auto;
@@ -117,88 +116,68 @@
     align-contet: flex-start;
   }
 
-  &-itemContainer {
-    display: block;
+  &-item {
+    background-color: white;
+    height: 400px;
+    margin: 20px;
+    overflow: hidden;
     position: relative;
-    margin: 10px;
-  }
+    width: 340px;
 
-  &-itemPic {
-    height: 300px;
-    position: relative;
-    width: 300px;
-    vertical-align: middle;
-  }
+    &:hover > .project-main {
+      height: 100px;
+    }
 
-  &-itemLink {
-    .f-proximaNova;
-    background-color: rgba(0, 0, 0, 0.75);
-    color: rgb(255, 255, 255);
-    display: inline-block;
-    font-size: 1.6rem;
-    height: 300px;
-    left: 0;
-    line-height: 300px;
-    opacity: 0;
-    position: absolute;
-    text-align: center;
-    text-decoration: none;
-    transition: opacity 250ms;
-    top: 0;
-    width: 300px;
-    vertical-align: middle;
-
-    &:hover {
+    &:hover > .project-description {
       opacity: 1;
     }
   }
-}
 
-.project {
-  &-item {
-    background-color: white;
-    height: 32rem;
-    margin: 3rem auto 4rem;
-    position: relative;
-    width: 25rem;
+  &-pic {
+    height: 400px;
+    position: absolute;
+    width: 340px;
   }
 
   &-main {
-    background: transparent url("/images/projects/robotoviews--thumbnail.png");
     height: 100%;
     position: relative;
-    transition: all 0.5s ease 0s;
-    z-index: @zIndex-2;
-
-    &:hover {
-      height: 12rem;
-    }
+    transition: all 500ms ease 0s;
   }
 
   &-mainOverlay {
     background-color: #000;
     height: 100%;
+    margin: 0;
     opacity: 0.6;
     position: absolute;
     width: 100%;
-    z-index: @zIndex-1;
   }
 
   &-mainTitle {
     border: 1px solid white;
-    color: white;
-    font-size: 2rem;
+    color: rgb(255, 255, 255);
     left: 50%;
-    top: 50%;
-    text-align: center;
+    margin: 0;
+    padding: 12px;
     position: absolute;
+    text-align: center;
+    top: 50%;
     transform: translate(-50%, -50%);
-    width: 20rem;
-    z-index: @zIndex-2;
   }
 
   &-description {
-    padding: 2rem;
+    opacity: 0;
+    transition: all 400ms linear 200ms;
+    padding: 16px;
     text-align: justify;
+  }
+
+  &-pic {
+    background-size: 360px 400px;
+
+    &-roboto {
+      background-image: url("/images/projects/robotoviews--thumbnail.png");
+    }
   }
 }
