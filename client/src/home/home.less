@@ -153,3 +153,52 @@
     }
   }
 }
+
+.project {
+  &-item {
+    background-color: white;
+    height: 32rem;
+    margin: 3rem auto 4rem;
+    position: relative;
+    width: 25rem;
+  }
+
+  &-main {
+    background: transparent url("/images/projects/robotoviews--thumbnail.png");
+    height: 100%;
+    position: relative;
+    transition: all 0.5s ease 0s;
+    z-index: @zIndex-2;
+
+    &:hover {
+      height: 12rem;
+    }
+  }
+
+  &-mainOverlay {
+    background-color: #000;
+    height: 100%;
+    opacity: 0.6;
+    position: absolute;
+    width: 100%;
+    z-index: @zIndex-1;
+  }
+
+  &-mainTitle {
+    border: 1px solid white;
+    color: white;
+    font-size: 2rem;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 20rem;
+    z-index: @zIndex-2;
+  }
+
+  &-description {
+    padding: 2rem;
+    text-align: justify;
+  }
+}

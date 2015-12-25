@@ -37,3 +37,6 @@ client/dist
 
 # Sekrets
 .env
+
+# Vim swap files
+.*.sw*
