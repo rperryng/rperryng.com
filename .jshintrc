@@ -4,5 +4,6 @@
     "module": true,
     "process": true,
     "require": true
-  }
+  },
+  "globalstrict": true
 }

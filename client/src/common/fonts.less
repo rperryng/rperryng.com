@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "Proxima Nova";
+  font-weight: normal;
+  src: url("/fonts/ProximaNova-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  font-weight: bold;
+  src: url("/fonts/ProximaNova-Alt-Bold.otf") format("opentype");
+}
+
+@fallbackFont: "sans-serif";
+
+.f-proximaNova {
+  font-family: "Proxima Nova", @fallbackFont;
+  font-weight: normal;
+}
+
+.f-proximaNova--heavy {
+  font-family: "Proxima Nova", @fallbackFont;
+  font-weight: bold;
+}

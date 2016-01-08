@@ -1,7 +1,6 @@
-@navbarHeight: 55px;
-@heroHeight: 600px;
-
-@import "lib.less";
+@import "fonts.less";
+@import "util.less";
+@import "zIndex.less";
 
 *,
 *::before,
@@ -9,34 +8,50 @@
   box-sizing: border-box;
 }
 
-html body {
+html,
+body {
+  margin: 0;
+
   * {
-    font-family: 'Roboto Slab', sans-serif;
+    font-family: "Open Sans", @fallbackFont;
   }
+
   h1 {
+    .f-proximaNova--heavy;
     font-size: 2rem;
     margin: 0.7rem 0;
   }
+
   h2 {
+    .f-proximaNova--heavy;
     font-size: 1.75rem;
     margin: 0.6rem 0;
   }
+
   h3 {
+    .f-proximaNova--heavy;
     font-size: 1.5rem;
     margin: 0.5rem 0;
   }
+
   h4 {
+    .f-proximaNova--heavy;
     font-size: 1.4rem;
     margin: 0.4rem 0;
   }
+
   h5 {
+    .f-proximaNova--heavy;
     font-size: 1.3rem;
     margin: 0.3rem 0;
   }
+
   h6 {
+    .f-proximaNova--heavy;
     font-size: 1.2rem;
     margin: 0.2rem 0;
   }
+
   a,
   p,
   span,
@@ -50,67 +65,65 @@ html body {
 }
 
 header {
-  background-color: rgba(45, 0, 52, 0.7);
-  border-bottom: 2px solid rgba(230, 230, 230, 1);
+  background-color: rgba(0, 0, 0, 0.6);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.35);
   position: fixed;
   width: 100%;
-  z-index: @zIndex-header;
+  z-index: @zIndex-9;
 }
-.navbar-list {
-  &-item {
+
+.navbar {
+  text-align: center;
+
+  &-list {
+    padding: 0;
+  }
+
+  &-list-item {
     display: inline-block;
   }
+
   &-link {
     color: rgba(255, 255, 255, 0.7);
-    font-size: 1.1em;
-    display: inline-block;
     padding: 15px;
+    text-transform: uppercase;;
     text-decoration: none;
-    transition: 0.2s;
     &:hover {
-      text-shadow: 0 0 2px rgba(255, 255, 255, 1);
       color: rgba(255, 255, 255, 1);
-
     }
   }
 }
 
-footer {
-  background-color: rgba(102, 51, 153, 1);
-  color: white;
-  padding: 50px 0;
-  text-align: center;
-}
-.icon {
-  background: url("/images/icons.png") no-repeat top left;
-  &-email {
-    background-position: 0 0; width: 32px; height: 32px;
+.footer {
+  background-color: rgb(43, 46, 53);
+  padding: 20px 0;
+
+  &-wrapper {
+    color: rgb(255, 255, 255);
+    margin: auto;
   }
-  &-github {
-    background-position: 0 -82px; width: 30px; height: 32px;
-  }
-  &-linkedin {
-    background-position: 0 -164px; width: 32px; height: 32px;
-  }
-  &-stackoverflow {
-    background-position: 0 -246px; width: 32px; height: 32px;
+
+  &-title {
+    margin: 0;
+    padding-top: 20px;
   }
 }
+
 .contactList {
-  display:inline-block;
-  list-style: none;
-  text-align:left;
-  padding: 0;
-  &-item {
-    line-height: 35px;
+  margin-top: 30px;
+
+  &-link,
+  &-icon {
+    line-height: 30px;
+    font-size: 1.1rem;
   }
+
+  &-icon {
+    margin-top: -4px;
+  }
+
   &-link {
     color: white;
-    margin-left: 15px;
     text-decoration: none;
-    transition: 0.3s;
-    &:hover {
-      text-shadow: 0 0 3px rgba(255, 255, 255, 1); 
-    }
   }
 }

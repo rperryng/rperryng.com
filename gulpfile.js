@@ -1,5 +1,12 @@
-var gulp = require('gulp'),
-  del = require('del');
+'use strict';
+
+var gulp = require('gulp');
+var env = require('node-env-file');
+var browserSync = require('browser-sync').create();
+var nodemon = require('gulp-nodemon');
+var del = require('del');
+
+env(__dirname + '/.env');
 
 var plugins = require('gulp-load-plugins')({
   rename: {
@@ -10,50 +17,32 @@ var plugins = require('gulp-load-plugins')({
 var paths = {
   source: {
     styles: {
-      theme: './client/src/common/*.less',
-      home: './client/src/home/home.less',
-      projects: './client/src/projects/projects.less'
-    },
-    scripts: {
-      home: './client/src/home/home.js',
-      projects: './client/src/projects/projects.js'
+      theme: './client/src/common/theme.less',
+      home: './client/src/home/home.less'
     }
   },
   build: {
     styles: {
       theme: './client/dist/theme?(.min).css',
-      home: './client/dist/home(.min).css',
-      projects: './client/dist/projects(.min).css'
-    },
-    scripts: {
-      home: './client/dist/home(.min).js',
-      projects: './client/dist/projects(.min).js'
+      home: './client/dist/home?(.min).css'
     },
     root: './client/dist'
   }
 };
 
-// 
+//
 // Styles
-// 
+//
 
-gulp.task('styles-build-theme', function () {
+gulp.task('styles', ['styles-theme', 'styles-home']);
+
+gulp.task('styles-theme', function () {
   return buildStylesStream(paths.source.styles.theme, paths.build.styles.theme, "theme.css");
 });
 
-gulp.task('styles-build-home', function () {
+gulp.task('styles-home', function () {
   return buildStylesStream(paths.source.styles.home, paths.build.styles.home, "home.css");
 });
-
-gulp.task('styles-build-projects', function () {
-  return buildStylesStream(paths.source.styles.projects, paths.build.styles.projects, "projects.css");
-});
-
-gulp.task('styles-build', [
-  'styles-build-theme',
-  'styles-build-home',
-  'styles-build-projects'
-]);
 
 function buildStylesStream(sourceFilePaths, staleFilePaths, buildFileName) {
   del(staleFilePaths, {}, function () {
@@ -72,47 +61,28 @@ function buildStylesStream(sourceFilePaths, staleFilePaths, buildFileName) {
   });
 }
 
-gulp.task('styles', ['styles-build']);
-
-//
-// Scripts
-//
-
-gulp.task('scripts-build-home', function () {
-  return buildScriptsStream(paths.source.scripts.home, paths.build.scripts.home);
-});
-
-gulp.task('scripts-build-projects', function () {
-  return buildScriptsStream(paths.source.scripts.projects, paths.build.scripts.projects);
-});
-
-gulp.task('scripts-build', ['scripts-build-home', 'scripts-build-projects']);
-
-function buildScriptsStream(sourceFilePaths, staleFilePaths) {
-  del(staleFilePaths, {}, function () {
-    return gulp.src(sourceFilePaths)
-      .pipe(gulp.dest(paths.build.root))
-      .pipe(plugins.uglify({
-        mangle: true
-      }))
-      .pipe(plugins.rename({
-        extname: '.min.js'
-      }))
-      .pipe(gulp.dest(paths.build.root));
+gulp.task('browser-sync', function () {
+  browserSync.init({
+    proxy: 'localhost:' + process.env.PORT,
+    files: ['client/dist', 'client/resources'],
+    browser: 'firefox'
   });
-}
+});
 
-gulp.task('scripts', ['scripts-build']);
+gulp.task('nodemon', function (callback) {
+  var started = false;
 
-//
-// Watches
-// 
+  return nodemon({
+    script: 'server.js'
+  }).on('start', function () {
+    if (!started) {
+      callback();
+      started = true;
+    }
+  });
+});
 
-gulp.task('default', ['styles', 'scripts'], function () {
-  gulp.watch(paths.source.styles.theme, ['styles-build-theme']);
-  gulp.watch(paths.source.styles.home, ['styles-build-home']);
-  gulp.watch(paths.source.styles.projects, ['styles-build-projects']);
-
-  gulp.watch(paths.source.scripts.home, ['scripts-build-home']);
-  gulp.watch(paths.source.scripts.projects, ['scripts-build-projects']);
+gulp.task('default', ['browser-sync', 'styles'], function () {
+  gulp.watch(paths.source.styles.theme, ['styles-theme']);
+  gulp.watch(paths.source.styles.home, ['styles-home']);
 });

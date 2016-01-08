@@ -1,102 +1,237 @@
-@import "../common/lib.less";
-#hero {
-  // background-color: @color-theme;
-  background-image: url("/images/hero.jpg");
+@import "../common/fonts.less";
+@import "../common/zIndex.less";
+
+@smallScreen: ~"only screen and (max-width: 1024px)";
+
+// Hero
+.hero {
+  background-image: url("/images/hero_dark.jpg");
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
-  text-align: center;
   height: 100vh;
+  text-align: center;
+
+  &-textContainer {
+    align-self: center;
+    margin: auto;
+    max-width: 50%;
+
+    @media @smallScreen {
+      max-width: 90%;
+    }
+  }
+
   &-name {
-    color: white;
-    font-size: 5vw;
+    border-bottom: 2px solid #ffffff;
+    color: #ffffff;
+    font-size: 4.5vw;
+    padding: 0 10px 12px;
+    text-align: center;
+
+    @media @smallScreen {
+      font-size: 6vw;
+    }
   }
-  &-about-dev {
-    border-top: 1px solid white;
+
+  &-subtitle {
+    .f-proximaNova;
+    color: #ffffff;
+    font-size: 1.8vw;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    @media @smallScreen {
+      font-size: 3vw;
+    }
+  }
+
+  &-studentTitle {
+    margin: 30px 0 2px;
+    padding: 0;
+  }
+
+  &-positionTitle {
+    margin: 0;
+    padding: 0;
+  }
+
+  &-seperatorGraphic {
+    width: 3.5vw;
   }
 }
-.hero-about {
-  color: white;
-  font-size: 3vw;
-}
-@media(max-width: 1024px) {
-  #hero-textContainer {
-    width: 80%;
+
+.about {
+  align-items: center;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  margin: 24px auto 0;
+
+  @media @smallScreen {
+    flex-flow: row wrap;
   }
-  #hero-name {
-    font-size: 6vw;
+
+  &-picContainer {
+    text-align: center;
+    @media @smallScreen {
+      flex-grow: 1;
+    }
   }
-  .hero-about {
-    font-size: 4vw;
+
+  &-pic {
+    display: block;
+    height: 400px;
   }
-}
-.image-me {
-  border: 4px solid @color-theme;
-  border-radius: 50%;
-  height: 300px;
-  width: 300px;
-}
-#about {
-  padding: 40px;
-  &-title {
-    color: @color-theme;
+
+  &-descriptionContainer {
+    padding: 40px;
   }
-  &-description {
-    font-size: 20px;
-    line-height: 40px;
+
+  &-descriptionTitle {
+    margin-bottom: 10px;
+  }
+
+  &-descriptionText {
+    .f-proximaNova;
+    font-size: 1.2rem;
+    color: rgb(93, 93, 93);
+    line-height: 32px;
     text-align: justify;
   }
 }
-#projects {
-  &-grid {
+
+.project {
+  background-color: #383838;
+
+  &-title {
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+  }
+
+  &-wrapper {
+    margin-top: -10px;
+    padding-bottom: 10px;
+
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-contet: flex-start;
   }
-  background-color: @color-theme;
-}
-.project {
+
   &-item {
-    padding: 20px;
-    text-decoration: none;
-    transition: 0.2s;
-    &:hover {
-      box-shadow: 0 4px 10px 6px rgba(0, 0, 0, 0.3);
-      text-shadow: 0 0 3px white;
-      z-index: @zIndex-overlay;
+    height: 400px;
+    margin: 10px;
+    overflow: hidden;
+    position: relative;
+    width: 400px;
+
+    &:hover > .project-main {
+      height: 100px;
+    }
+
+    &:hover > .project-main > .project-overlay {
+      border: 1px solid white;
+      border-bottom: none;
+      opacity: 0.8;
+    }
+
+    &:hover > .project-main > .project-mainTitle {
+      text-decoration: underline;
+    }
+
+    &:hover > .project-description {
+      opacity: 1;
     }
   }
-  &-title {
-    color: white;
-    font-size: 2.3em;
+
+  &-main {
+    height: 100%;
+    position: relative;
+    transition: all 500ms ease 0s;
   }
-  &-image {
-    border-radius: 6px;
-    padding: 40px;
-    transition: 0.3s;
-    &:hover {
-      padding: 20px;
+  
+  &-overlay {
+    background-color: #000000;
+    height: 100%;
+    margin: 0;
+    opacity: 0.65;
+    position: absolute;
+    transition: all 500ms ease 0s;
+    width: 100%;
+
+    &-uberprepared {
+      background-color: #779ECB;
+    }
+    &-pixelperfectpieceofpizza {
+      background-color: #26C281;
+    }
+    &-exploreto {
+      background-color: #e9d460;
+    }
+    &-yodoorbell {
+      background-color: #FFB347;
+    }
+    &-robotoviews {
+      background-color: #913D88;
+    }
+    &-carpuwl {
+      background-color: #1E824C;
     }
   }
-}
-// fix iOS not traeting viewport units working correctly...
-//
-// https://gist.github.com/pburtchaell/e702f441ba9b3f76f587
-// iPad with portrait orientation.
-@media all and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
-  #hero {
-    height: 1024px;
+
+  &-mainTitle {
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid white;
+    color: rgb(255, 255, 255);
+    left: 50%;
+    margin: 0;
+    padding: 12px;
+    position: absolute;
+    text-align: center;
+    transition: all 500ms ease 0s;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
-}
-// iPad with landscape orientation.
-@media all and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
-  #hero {
-    height: 768px;
+
+  &-description {
+    background-color: rgb(255, 255, 255, 255);
+    height: 300px;
+    opacity: 0;
+    padding: 16px;
+    text-align: justify;
+    transition: all 500ms ease 0s;
   }
-}
-// iPhone 5
-@media screen and (device-aspect-ratio: 40/71) {
-  #hero {
-    height: 500px;
+
+  &-pic {
+    background-size: cover;
+
+    &-robotoviews {
+      background-image: url("/images/projects/robotoviews--thumbnail.png");
+    }
+
+    &-uberprepared {
+      background-image: url("/images/projects/uberprepared--thumbnail.png");
+    }
+
+    &-carpuwl {
+      background-image: url("/images/projects/carpuwl--thumbnail.png");
+    }
+
+    &-pixelperfectpieceofpizza {
+      background-image: url("/images/projects/pixelperfectpieceofpizza--thumbnail.png");
+    }
+
+    &-exploreto {
+      background-image: url("/images/projects/exploreto--thumbnail.png");
+    }
+
+    &-yodoorbell {
+      background-image: url("/images/projects/yodoorbell--thumbnail.png");
+    }
   }
 }

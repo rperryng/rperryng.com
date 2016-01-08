@@ -1,0 +1,85 @@
+extend ../views/main
+
+block content
+  main
+    section.hero.u-fullHeight.u-flex
+      div.hero-textContainer
+        h1.hero-name Ryan Perry-Nguyen
+        h2.hero-subtitle.hero-studentTitle 2B Computer Engineering Student
+        img.hero-seperatorGraphic(src="/images/seperatorGraphic.png")
+        h2.hero-subtitle.hero-positionTitle Devoted Software Developer
+
+    section.about.u-widthWrapper
+      div.about-picContainer
+        img.about-pic(src="/images/me_bw.jpg")
+      div.about-descriptionContainer
+        h2.about-descriptionTitle About Me
+        p.about-descriptionText
+          | Hey there, I'm Ryan Perry-Nguyen. I'm a passionate mobile, 
+          | web, and aspiring full stack developer currently studying
+          | at the University of Waterloo. Below you can find a list 
+          | of hackathon and personal projects that I've finished in
+          | my spare time. Click on any that catch your eye to read 
+          | more about them.
+
+    section.project
+      h2.project-title Projects
+      div.project-wrapper
+        div.project-item
+          div.project-main.project-pic.project-pic-uberprepared
+            div.project-overlay.project-overlay-uberprepared
+            h3.project-mainTitle UberPrepared
+          p.project-description 
+            | UberPrepared is a texting bot that allows you to schedule
+            | Uber trips ahead of time.  Based on your confirmed pickup
+            | location, confirmed pick up time, and calculated estimated
+            | wait time, the bot would order an uber to your location
+            | at the perfect time to line up with when you wanted to be
+            | picked up.
+        div.project-item
+          div.project-main.project-pic.project-pic-pixelperfectpieceofpizza
+            div.project-overlay.project-overlay-pixelperfectpieceofpizza
+            h3.project-mainTitle Pixel Perfect Piece of Pizza
+          p.project-description
+            | Pixel Perfect Piece of Pizza bot is a web chat bot that allowed
+            | users to use natural language in order to order predetermined
+            | or customized pizzas.  This project was our entry for the
+            | Kik hackathon hosted on Waterloo's own campus, and won first
+            | place.
+        div.project-item
+          div.project-main.project-pic.project-pic-exploreto
+            div.project-overlay.project-overlay-exploreto
+            h3.project-mainTitle ExploreTO
+          p.project-description
+            | ExploreTO was a service built during Toronto's Startup Weekend
+            | event in the fall of 2014.  It's aim was to partner with local
+            | businesses to provide discounted prices for new things to
+            | try on a regular basis.
+        div.project-item
+          div.project-main.project-pic.project-pic-yodoorbell
+            div.project-overlay.project-overlay-yodoorbell
+            h3.project-mainTitle YoDoorbell
+          p.project-description
+            | YoDoorbell was built with the aim of improving the everyday
+            | doorbell.  When an RFID enabled card present in front of
+            | a programmed Tessel microcontroller, a YO containing a picture
+            | of the guest would be sent to the owner of the doorbell.
+            | Users could also "YO" a certain account in order to prompt the
+            | Tessel to take a picture, gather a temperature reading, and
+            | send the data back via another YO.
+        div.project-item
+          div.project-main.project-pic.project-pic-robotoviews
+            div.project-overlay.project-overlay-robotoviews
+            h3.project-mainTitle Roboto Views
+          p.project-description
+            | RobotoViews is an Android library that makes it easy to
+            | use Google's Roboto fonts via XML layout files in Android,
+            | which is otherwise impossible.
+        div.project-item
+          div.project-main.project-pic.project-pic-carpuwl
+            div.project-overlay.project-overlay-carpuwl
+            h3.project-mainTitle CarpUWL
+          p.project-description
+            | CarpUWL is an Android app designed to help schedule and
+            | organize carpooling from city to city.  It was my first
+            | hackathon ever and won the Engineering Society Award.
