@@ -40,3 +40,6 @@ client/dist
 
 # Vim swap files
 .*.sw*
+
+# Mac files
+.DS_store

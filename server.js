@@ -21,6 +21,10 @@ app.use('/fonts', express.static(__dirname + '/client/resources/fonts'));
 app.use('/images', express.static(__dirname + '/client/resources/images'));
 app.use('/bower', express.static(__dirname + '/bower_components'));
 
+app.get('/resume', function (req, res, next) {
+  res.sendFile(__dirname + '/client/resources/resume.pdf');
+});
+
 // Routes
 app.use(require('./server/home'));
 

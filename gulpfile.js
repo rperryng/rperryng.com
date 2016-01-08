@@ -65,7 +65,7 @@ gulp.task('browser-sync', function () {
   browserSync.init({
     proxy: 'localhost:' + process.env.PORT,
     files: ['client/dist', 'client/resources'],
-    browser: 'google chrome'
+    browser: 'firefox'
   });
 });
 
