@@ -86,3 +86,6 @@ gulp.task('default', ['browser-sync', 'styles'], function () {
   gulp.watch(paths.source.styles.theme, ['styles-theme']);
   gulp.watch(paths.source.styles.home, ['styles-home']);
 });
+
+gulp.task('build', ['styles']);
+
