@@ -66,16 +66,14 @@
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
-  margin: 24px auto 0;
-
-  @media @smallScreen {
-    flex-flow: row wrap;
-  }
+  margin: auto 0;
 
   &-picContainer {
     text-align: center;
+    margin-top: 24px;
+
     @media @smallScreen {
-      flex-grow: 1;
+      display: none;
     }
   }
 
@@ -123,6 +121,16 @@
     align-contet: flex-start;
   }
 
+  &-githubBlurb {
+    color: white;
+  }
+
+  &-blurbLink {
+    .f-proximaNova--heavy;
+    color: white;
+    font-size: 1.4rem;
+  }
+
   &-item {
     height: 400px;
     margin: 10px;
@@ -150,7 +158,7 @@
     position: relative;
     transition: all 500ms ease 0s;
   }
-  
+
   &-overlay {
     background-color: #000000;
     height: 100%;

@@ -64,8 +64,7 @@ function buildStylesStream(sourceFilePaths, staleFilePaths, buildFileName) {
 gulp.task('browser-sync', function () {
   browserSync.init({
     proxy: 'localhost:' + process.env.PORT,
-    files: ['client/dist', 'client/resources'],
-    browser: 'firefox'
+    files: ['client/dist', 'client/resources']
   });
 });
 
