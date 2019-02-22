@@ -7,6 +7,13 @@ var logger  = require('logger');
 
 env(__dirname + '/.env');
 
+var dd_options = {
+  'response_code':true,
+  'tags': ['app:my_app']
+};
+
+var connect_datadog = require('connect-datadog')(dd_options);
+
 // Application setup
 var app = express();
 app.set('view engine', 'jade');
@@ -24,6 +31,9 @@ app.use('/bower', express.static(__dirname + '/bower_components'));
 app.get('/resume', function (req, res, next) {
   res.sendFile(__dirname + '/client/resources/resume.pdf');
 });
+
+// Datadog
+app.use(connect_datadog);
 
 // Routes
 app.use(require('./server/home'));
